@@ -12,7 +12,7 @@ function Footer() {
          <Typography variant="body1">
            Copyright ©
            <Link color="inherit" href="#">
-             react-start
+             UI Change Color
            </Link>
            {" " + new Date().getFullYear()}.
          </Typography>

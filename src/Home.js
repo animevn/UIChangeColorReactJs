@@ -1,14 +1,16 @@
 import React, {useState} from "react";
 import {Colors} from "./Colors";
+import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
 
 function Home() {
   const [id, setId] = useState(0);
 
-  const widthStyle = "col-xl-5 col-lg-6 col-md-8 col-sm-10 col-10";
+
   const colorBox = (
-    <div className={`container border border-success rounded ${widthStyle}`}
-         style={{"height":"10rem", "background-color":`${Colors[id]}`}}>
-    </div>
+    <Box height={200} style={{"backgroundColor":`${Colors[id]}`}}
+         border={1} borderRadius={5} borderColor={Colors[14]} m={5}>
+    </Box>
   );
 
   function changeColor() {
@@ -24,12 +26,12 @@ function Home() {
   }
 
   const buttonBox = (
-    <div className="container mt-5 d-flex justify-content-center">
-      <button className="btn btn-outline-success" style={{"width":"15rem"}}
-              onClick={changeColor}>
+    <Box display="flex" flexDirection="row" justifyContent="center" mt={5}>
+      <Button variant="contained" color="secondary"
+              onClick={changeColor} style={{"width":"15rem"}}>
         Color: {capitalizedFirstLetter(Colors[id])}
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 
   return (
